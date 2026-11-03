@@ -23,7 +23,7 @@ const profile = {
   setText("role", profile.role);
   setText("location", profile.location);
   setText("emailLabel", profile.email || "이메일 주소 입력");
-  document.title = `${profile.name} | 문제를 해결하는 이력서`;
+  document.title = `${profile.name} | ${profile.role}`;
   document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
   // 데스크톱·모바일 모두에서 사용할 수 있는 경력 카드 슬라이더
