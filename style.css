@@ -186,7 +186,7 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 
 .profile-meta dd[data-profile="emailLabel"]{font-size:11px;letter-spacing:-.02em;white-space:nowrap;overflow-wrap:normal;word-break:normal}
 
-.hero-landscape{display:block;align-self:center;width:100%;height:auto;max-height:300px;object-fit:contain;border-radius:3px;margin-bottom:18px}
+.hero-landscape{display:block;align-self:center;width:100%;height:auto;aspect-ratio:1/1;max-height:none;object-fit:contain;object-position:center;padding:0;background:transparent;border-radius:3px;margin-bottom:18px}
 
 .hero-visual-steps{width:100%;justify-content:space-evenly;gap:6px;font-size:clamp(16px,1.4vw,21px);font-weight:900;line-height:1.5;letter-spacing:0;white-space:nowrap;color:var(--paper)}
 
@@ -261,4 +261,11 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 .creation-with-image .creation-image img{width:100%;height:auto;object-fit:contain}
 @media(max-width:760px){.creation-with-image{grid-template-columns:minmax(0,1fr)}.creation-with-image .creation-image{padding:12px}}
 @media print{.creation-with-image{grid-template-columns:minmax(0,1fr)}.creation-with-image .creation-image{padding:3mm}}
-.creation-with-image .creation-image .product-detail-preview{width:70%;margin-inline:auto}
+
+
+/* Match each preview image to its frame without extra background margins. */
+.creation-with-image .creation-image{display:block;height:auto;align-self:center;padding:0;background:transparent}
+.creation-with-image .creation-image img{display:block;width:100%;height:auto;max-width:100%;border:0;border-radius:0;margin:0;object-fit:contain}
+/* Uniform 4:3 portfolio previews; keep each complete image visible. */
+.creation-with-image .creation-image{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:4/3;height:auto;overflow:hidden;background:color-mix(in srgb,var(--blue) 28%,var(--paper));padding:0}
+.creation-with-image .creation-image img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;margin:0;border:0}
