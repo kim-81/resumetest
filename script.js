@@ -81,7 +81,7 @@ const profile = {
   window.addEventListener("resize", () => goToSlide(activeIndex, "instant"));
   goToSlide(0, "instant");
 
-  // 연락처 유효성 확인 + 복사/메일 보내기
+  // 연락처 유효성 확인 및 이메일 주소 복사
   const toast = document.querySelector(".toast");
   let toastTimer;
   const showToast = (message) => {
@@ -91,10 +91,6 @@ const profile = {
     toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2800);
   };
   const isValidEmail = () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(profile.email);
-  document.querySelector("[data-email-action]").addEventListener("click", () => {
-    if (!isValidEmail()) return showToast("script.js의 profile.email에 실제 이메일을 먼저 입력하세요.");
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent("채용 관련 문의")}`;
-  });
   document.querySelector("[data-copy-email]").addEventListener("click", async () => {
     if (!isValidEmail()) return showToast("script.js의 profile.email에 실제 이메일을 먼저 입력하세요.");
     try {

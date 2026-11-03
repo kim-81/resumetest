@@ -252,3 +252,13 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 @media print{.history-timeline{--year-width:36mm;overflow:visible}.history-item{padding-bottom:3mm}}
 /* Compact career cards without clipping their content. */
 @media screen{.experience-card{padding:20px 24px 18px;min-height:0}.experience-card h3{margin:12px 0 4px}.experience-divider{margin:12px 0 10px}.resume-career-body h4{margin:10px 0 5px}.resume-career-body p{line-height:1.48}.resume-results li{padding:7px 0}.resume-results .result-title{line-height:1.4;margin-bottom:3px}.resume-results .career-recognition{margin-top:5px}}
+
+/* Personal creations: description left, actual screenshot right. */
+.creative-showcase{grid-template-columns:minmax(0,1fr)}
+.creation-with-image{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);align-items:center;background:color-mix(in srgb,var(--blue) 12%,var(--paper))}
+.creation-with-image .creation-copy{min-width:0}
+.creation-with-image .creation-image{height:100%;display:flex;align-items:center;padding:18px}
+.creation-with-image .creation-image img{width:100%;height:auto;object-fit:contain}
+@media(max-width:760px){.creation-with-image{grid-template-columns:minmax(0,1fr)}.creation-with-image .creation-image{padding:12px}}
+@media print{.creation-with-image{grid-template-columns:minmax(0,1fr)}.creation-with-image .creation-image{padding:3mm}}
+.creation-with-image .creation-image .product-detail-preview{width:70%;margin-inline:auto}
