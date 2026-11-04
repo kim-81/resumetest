@@ -278,3 +278,6 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 /* Match the three supplied 1120 x 800 portfolio images. */
 .creation-with-image .creation-image{aspect-ratio:7/5}
 .creation-with-image .creation-image img{object-fit:cover;object-position:center}
+
+/* Show the complete Sangilttara screenshot across its fixed preview area. */
+.creation-with-image .creation-image img[src="assets/resume-sample.png"]{object-fit:fill;object-position:center}
