@@ -332,3 +332,100 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 /* Breathing room beneath the final section. */
 @media screen{.main-content{padding-bottom:64px}}
 @media screen and (max-width:760px){.main-content{padding-bottom:40px}}
+
+/* Mobile profile: photograph, name and introduction side by side. */
+@media screen and (max-width:760px){
+  .profile-card{grid-template-columns:64px 52px minmax(0,1fr);column-gap:12px;align-items:center}
+  .profile-card .portrait-frame{grid-column:1;grid-row:1;margin:0;aspect-ratio:1/1}
+  .profile-card .profile-identity{grid-column:2;grid-row:1;padding-top:0;min-width:0}
+  .profile-card .profile-identity h1{font-size:20px;white-space:nowrap;margin:0}
+  .profile-card .profile-meta{display:grid;grid-column:3;grid-row:1;gap:7px;margin:0;padding:0;min-width:0}
+  .profile-card .profile-meta>div{grid-template-columns:1fr;gap:1px;min-height:0;padding:0}
+  .profile-card .profile-meta dt{font-size:9px;line-height:1.4}
+  .profile-card .profile-meta dd{font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+  .profile-card .profile-meta dd[data-profile="emailLabel"]{font-size:10px}
+}
+/* Mobile profile keeps a readable portrait and horizontal metadata rows. */
+@media screen and (max-width:760px){
+  .profile-card{grid-template-columns:102px minmax(0,1fr);column-gap:18px;row-gap:18px}
+  .profile-card .portrait-frame{grid-column:1;grid-row:1;width:102px;aspect-ratio:1/1}
+  .profile-card .profile-identity{grid-column:2;grid-row:1}
+  .profile-card .profile-identity h1{font-size:27px}
+  .profile-card .profile-meta{grid-column:1/-1;grid-row:2;gap:10px;width:100%;padding-top:14px;border-top:1px solid var(--line)}
+  .profile-card .profile-meta>div{grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:baseline}
+  .profile-card .profile-meta dt{font-size:11px;line-height:1.6}
+  .profile-card .profile-meta dd,.profile-card .profile-meta dd[data-profile="emailLabel"]{font-size:12px;line-height:1.6}
+}
+/* Mobile: portrait and name on the left, labeled introduction on the right. */
+@media screen and (max-width:760px){
+  .profile-card{grid-template-columns:80px minmax(0,1fr);column-gap:16px;row-gap:8px;align-items:center}
+  .profile-card .portrait-frame{grid-column:1;grid-row:1;width:80px;aspect-ratio:1/1;align-self:end}
+  .profile-card .profile-identity{grid-column:1;grid-row:2;align-self:start;text-align:center}
+  .profile-card .profile-identity h1{font-size:23px}
+  .profile-card .profile-meta{grid-column:2;grid-row:1/3;gap:9px;width:100%;padding:0;border:0}
+  .profile-card .profile-meta>div{grid-template-columns:34px minmax(0,1fr);gap:7px;align-items:baseline}
+  .profile-card .profile-meta dt{font-size:10px;line-height:1.6;white-space:nowrap}
+  .profile-card .profile-meta dd,.profile-card .profile-meta dd[data-profile="emailLabel"]{font-size:11px;line-height:1.6}
+}
+@media screen and (max-width:760px){
+  .profile-card .profile-meta>div:first-child dd br{display:none}
+  .profile-card .profile-meta>div:first-child dd br::after{content:" "}
+  .profile-card .profile-meta>div:first-child dd{white-space:nowrap;font-size:10px;letter-spacing:-.04em}
+}
+@media screen and (max-width:760px){
+  .profile-card{grid-template-columns:90px minmax(0,1fr);column-gap:12px}
+  .profile-card .portrait-frame{width:90px}
+  .profile-card .profile-meta>div:first-child dd br{display:contents}
+}
+@media screen and (max-width:375px){.profile-card .profile-meta>div:first-child dd{font-size:9px;letter-spacing:-.05em}}
+/* Mobile chronology: retain date column and stack title and detail. */
+@media screen and (max-width:760px){
+  .history-timeline{--year-width:112px;overflow-x:visible}
+  .history-item{width:100%;min-width:0;grid-template-columns:var(--year-width) minmax(0,1fr);padding-bottom:22px}
+  .history-year{white-space:normal;overflow-wrap:normal;padding-right:12px}
+  .history-detail-inline{display:block;white-space:normal;padding-right:0;padding-left:16px;min-width:0}
+  .history-detail-inline h3,.history-detail-inline p{white-space:normal;overflow-wrap:anywhere;word-break:keep-all}
+  .history-detail-inline p{margin-top:6px}
+}
+/* Increase mobile profile labels and values by 2px. */
+@media screen and (max-width:760px){
+  .profile-card .profile-meta dt{font-size:12px}
+  .profile-card .profile-meta dd,.profile-card .profile-meta dd[data-profile="emailLabel"]{font-size:13px}
+  .profile-card .profile-meta>div:first-child dd{font-size:12px}
+}
+@media screen and (max-width:375px){.profile-card .profile-meta>div:first-child dd{font-size:11px}}
+/* Match mobile introduction text to the name size. */
+@media screen and (max-width:760px){
+  .profile-card .profile-meta>div{grid-template-columns:69px minmax(0,1fr);gap:8px}
+  .profile-card .profile-meta dt,
+  .profile-card .profile-meta dd,
+  .profile-card .profile-meta dd[data-profile="emailLabel"],
+  .profile-card .profile-meta>div:first-child dd{font-size:23px;line-height:1.5;letter-spacing:normal}
+  .profile-card .profile-meta dd,
+  .profile-card .profile-meta>div:first-child dd{white-space:normal;overflow-wrap:anywhere;word-break:normal}
+}
+/* Restore the requested compact mobile introduction sizes. */
+@media screen and (max-width:760px){
+  .profile-card .profile-meta>div{grid-template-columns:34px minmax(0,1fr);gap:7px}
+  .profile-card .profile-meta dt{font-size:12px;line-height:1.6}
+  .profile-card .profile-meta dd,.profile-card .profile-meta dd[data-profile="emailLabel"]{font-size:13px;line-height:1.6}
+  .profile-card .profile-meta>div:first-child dd{font-size:12px;line-height:1.6;white-space:nowrap;letter-spacing:-.04em}
+}
+@media screen and (max-width:375px){.profile-card .profile-meta>div:first-child dd{font-size:11px;letter-spacing:-.05em}}
+/* Mobile introduction sizes requested by the user. */
+@media screen and (max-width:760px){
+  .profile-card .profile-meta dt{font-size:13px}
+  .profile-card .profile-meta dd,.profile-card .profile-meta dd[data-profile="emailLabel"]{font-size:14px}
+  .profile-card .profile-meta>div:first-child dd{font-size:13px}
+}
+@media screen and (max-width:375px){.profile-card .profile-meta>div:first-child dd{font-size:12px}}
+/* Two portfolio/award cards per row on mobile. */
+@media screen and (max-width:760px){
+  .creations-section .creative-showcase{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .creations-section .creation-card{min-width:0}
+  .creations-section .creation-card .creation-copy{padding:10px}
+  .creations-section .creation-card .creation-copy h4{font-size:15px;line-height:1.4;overflow-wrap:anywhere}
+  .creations-section .creation-card .creation-copy>p{font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+  .creations-section .work-sample-type{font-size:9px;overflow-wrap:anywhere}
+  .creations-section .creation-card .creation-copy .capability-tags{gap:4px 7px}
+}
