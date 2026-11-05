@@ -429,3 +429,4 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
   .creations-section .work-sample-type{font-size:9px;overflow-wrap:anywhere}
   .creations-section .creation-card .creation-copy .capability-tags{gap:4px 7px}
 }
+.history-certifications[hidden]{display:none!important}
