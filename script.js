@@ -5,7 +5,7 @@
    ============================================================ */
 const profile = {
   name: "김재환",
-  role: "AX 패키지 세일즈 다채널 전문가",
+  role: "",
   location: "",
   email: "polo1216@naver.com"
 };
@@ -23,7 +23,7 @@ const profile = {
   setText("role", profile.role);
   setText("location", profile.location);
   setText("emailLabel", profile.email || "이메일 주소 입력");
-  document.title = `${profile.name} | ${profile.role}`;
+  document.title = profile.role ? `${profile.name} | ${profile.role}` : `${profile.name} | 이력서`;
   document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
   // 데스크톱·모바일 모두에서 사용할 수 있는 경력 카드 슬라이더
