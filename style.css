@@ -430,3 +430,6 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
   .creations-section .creation-card .creation-copy .capability-tags{gap:4px 7px}
 }
 .history-certifications[hidden]{display:none!important}
+
+/* Readable certificate names under the section-style heading. */
+.history-certificate-list li{font-size:14px;line-height:1.8;overflow-wrap:anywhere}
