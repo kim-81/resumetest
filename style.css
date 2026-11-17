@@ -444,3 +444,7 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 .certificate-with-preview .certificate-summary{flex:0 1 auto;gap:8px}
 .certificate-with-preview .certificate-preview{width:180px;flex:0 0 auto}
 @media(max-width:760px){.certificate-with-preview .certificate-preview{width:110px}.history-certificate-list .certificate-with-preview{gap:10px}}
+/* Reusable compact credential slots for future certificates. */
+.history-certificate-list .certificate-with-preview{grid-column:auto;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-width:0}
+.certificate-with-preview .certificate-summary{min-width:0;overflow-wrap:anywhere}
+@media(max-width:760px){.history-certificate-list .certificate-with-preview{gap:10px}}
