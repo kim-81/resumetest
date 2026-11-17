@@ -433,3 +433,9 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 
 /* Readable certificate names under the section-style heading. */
 .history-certificate-list li{font-size:14px;line-height:1.8;overflow-wrap:anywhere}
+
+/* Small certificate preview beside issuer and credential name. */
+.history-certificate-list .certificate-with-preview{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:18px}
+.certificate-summary{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;min-width:0}
+.certificate-preview{display:block;width:240px;max-width:100%;height:auto;object-fit:contain;border:1px solid var(--line);border-radius:3px}
+@media(max-width:760px){.certificate-preview{width:140px}.history-certificate-list .certificate-with-preview{gap:12px}}
