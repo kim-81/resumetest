@@ -439,3 +439,8 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 .certificate-summary{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;min-width:0}
 .certificate-preview{display:block;width:240px;max-width:100%;height:auto;object-fit:contain;border:1px solid var(--line);border-radius:3px}
 @media(max-width:760px){.certificate-preview{width:140px}.history-certificate-list .certificate-with-preview{gap:12px}}
+/* Keep the smaller certificate image directly beside its name. */
+.history-certificate-list .certificate-with-preview{display:flex;justify-content:flex-start;align-items:center;gap:12px;flex-wrap:wrap}
+.certificate-with-preview .certificate-summary{flex:0 1 auto;gap:8px}
+.certificate-with-preview .certificate-preview{width:180px;flex:0 0 auto}
+@media(max-width:760px){.certificate-with-preview .certificate-preview{width:110px}.history-certificate-list .certificate-with-preview{gap:10px}}
