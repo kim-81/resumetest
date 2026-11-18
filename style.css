@@ -434,17 +434,11 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 /* Readable certificate names under the section-style heading. */
 .history-certificate-list li{font-size:14px;line-height:1.8;overflow-wrap:anywhere}
 
-/* Small certificate preview beside issuer and credential name. */
-.history-certificate-list .certificate-with-preview{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:18px}
-.certificate-summary{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;min-width:0}
-.certificate-preview{display:block;width:240px;max-width:100%;height:auto;object-fit:contain;border:1px solid var(--line);border-radius:3px}
-@media(max-width:760px){.certificate-preview{width:140px}.history-certificate-list .certificate-with-preview{gap:12px}}
-/* Keep the smaller certificate image directly beside its name. */
-.history-certificate-list .certificate-with-preview{display:flex;justify-content:flex-start;align-items:center;gap:12px;flex-wrap:wrap}
-.certificate-with-preview .certificate-summary{flex:0 1 auto;gap:8px}
-.certificate-with-preview .certificate-preview{width:180px;flex:0 0 auto}
-@media(max-width:760px){.certificate-with-preview .certificate-preview{width:110px}.history-certificate-list .certificate-with-preview{gap:10px}}
-/* Reusable compact credential slots for future certificates. */
-.history-certificate-list .certificate-with-preview{grid-column:auto;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-width:0}
-.certificate-with-preview .certificate-summary{min-width:0;overflow-wrap:anywhere}
-@media(max-width:760px){.history-certificate-list .certificate-with-preview{gap:10px}}
+/* Credential entries: two per row, with a verification link. */
+.history-certificate-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px}
+.history-certificate-list .certificate-entry{display:block;min-width:0;padding:12px 0}
+.certificate-entry .certificate-title{margin:0;font-size:14px;line-height:1.8;overflow-wrap:anywhere}
+.certificate-entry .certificate-details{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;margin-top:8px;font-size:12px;line-height:1.7;color:var(--navy)}
+.certificate-id{overflow-wrap:anywhere}
+.certificate-detail-button{display:inline-flex;align-items:center;justify-content:center;padding:5px 12px;border:1px solid var(--line);border-radius:3px;font-size:12px;font-weight:750;color:var(--midnight);background:var(--paper);white-space:nowrap}
+@media(max-width:760px){.history-certificate-list{grid-template-columns:minmax(0,1fr)}}
