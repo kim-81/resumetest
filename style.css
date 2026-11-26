@@ -442,5 +442,5 @@ svg{display:block;max-width:100%}::selection{background:var(--blue);color:var(--
 .certificate-id{overflow-wrap:anywhere}
 .certificate-detail-button{display:inline-flex;align-items:center;justify-content:center;padding:5px 12px;border:1px solid var(--line);border-radius:3px;font-size:12px;font-weight:750;color:var(--midnight);background:var(--paper);white-space:nowrap}
 @media(max-width:760px){.history-certificate-list{grid-template-columns:minmax(0,1fr)}}
-/* Keep the supplied AI WORK LAB screenshot fully visible without stretching. */
-.creation-with-image .creation-image img.ai-work-lab-preview{object-fit:contain;object-position:center;background:#fff}
+/* Fill the preview with the main AI WORK LAB content, preserving image proportions. */
+.creation-with-image .creation-image img.ai-work-lab-preview{object-fit:cover;object-position:center top;background:#fff}
